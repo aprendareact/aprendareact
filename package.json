@@ -17,7 +17,6 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.9",
     "@mdx-js/react": "^1.6.9",
-    "eslint-plugin-mdx": "^1.7.1",
     "gatsby": "^2.24.3",
     "gatsby-plugin-mdx": "^1.2.26",
     "gatsby-plugin-postcss": "^2.3.11",
@@ -28,8 +27,6 @@
     "tailwindcss": "^1.5.1"
   },
   "devDependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
     "@types/node": "^14.0.23",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
@@ -39,6 +36,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-mdx": "^1.7.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.8",
