@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true,
   },
   extends: [
     'eslint:recommended',
@@ -20,6 +21,13 @@ module.exports = {
     {
       files: ['*.md', '*.mdx'],
       extends: ['plugin:mdx/overrides'],
+    },
+    // Override some TypeScript rules just for .js files
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+      },
     },
   ],
   globals: {
