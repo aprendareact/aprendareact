@@ -14,11 +14,22 @@
     "lint": "eslint . --cache-location node_modules/.cache/eslint",
     "format": "prettier --write \"**/*.+(js|json|css|md|mdx|html)\"",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "storybook": "NODE_ENV=production start-storybook -s ./public -p 6006 --ci",
+    "build-storybook": "NODE_ENV=production build-storybook"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@mdx-js/mdx": "^1.6.11",
     "@mdx-js/react": "^1.6.11",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-remove-graphql-queries": "^2.9.14",
     "gatsby": "^2.24.3",
     "gatsby-image": "^2.4.13",
     "gatsby-plugin-mdx": "^1.2.27",
@@ -28,6 +39,7 @@
     "gatsby-remark-images": "^3.3.19",
     "gatsby-source-filesystem": "^2.3.20",
     "react": "^16.13.1",
+    "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^16.13.1",
     "tailwindcss": "^1.5.1"
   },
