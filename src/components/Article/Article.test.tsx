@@ -28,7 +28,7 @@ describe('Article', () => {
       <Article
         date="23 de Julho de 2020"
         title="Como escrever um teste"
-        previewText="Esse é o texto de preview"
+        description="Esse é o texto de preview"
         link="https://www.aprendareact.com.br/artigos/esse"
       />
     )
