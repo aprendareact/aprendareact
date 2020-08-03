@@ -1,7 +1,7 @@
-import Article from './Article'
-
 import React from 'react'
 import { screen, render } from '@testing-library/react'
+
+import Article from './'
 
 describe('Article', () => {
   it('shows article information', () => {

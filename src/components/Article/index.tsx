@@ -1,4 +1,4 @@
-import Heading from '../Heading/Heading'
+import Heading from '../Heading'
 import * as React from 'react'
 
 export interface ArticleProps {
@@ -21,7 +21,7 @@ const Article: React.FC<ArticleProps> = ({
       </time>
       <Heading>{title}</Heading>
     </header>
-    {description && <p className="mt-4">{description}</p>}
+    {description ? <p className="mt-4">{description}</p> : null}
     <a
       href={link}
       className="uppercase text-sm text-gray-800 tracking-wide mt-10"
