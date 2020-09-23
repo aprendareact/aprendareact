@@ -15,6 +15,7 @@
     "format": "prettier --write \"**/*.+(js|json|css|md|mdx|html)\"",
     "test": "jest",
     "test:watch": "jest --watch",
+    "storybook:dev": "NODE_ENV=development start-storybook -s ./public -p 6006 --ci",
     "storybook": "NODE_ENV=production start-storybook -s ./public -p 6006 --ci",
     "build-storybook": "NODE_ENV=production build-storybook"
   },
