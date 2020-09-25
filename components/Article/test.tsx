@@ -1,4 +1,4 @@
-import { screen, render } from '@testing-library/react'
+import { screen, render } from '../../helpers/test-utils'
 
 import Article from '.'
 

@@ -6,6 +6,7 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+        <Head />
         <body>
           <Main />
           <NextScript />

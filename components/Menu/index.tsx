@@ -1,6 +1,14 @@
-import Link from 'next/link'
-import { Flex, Link as ChakraLink, Button, HStack } from '@chakra-ui/core'
+import NextLink from 'next/link'
+import { Flex, Link, Button, HStack } from '@chakra-ui/core'
 import Logo, { DiscordLogo, GithubLogo } from './logo'
+
+const MenuItem = ({ href = '/', children }) => (
+  <NextLink href={href}>
+    <Button bg="white" rounded="100px">
+      <Link color="clay.500">{children}</Link>
+    </Button>
+  </NextLink>
+)
 
 const Menu = () => {
   return (
@@ -14,39 +22,26 @@ const Menu = () => {
     >
       <Logo />
       <HStack spacing="40px" as="nav">
-        <Link href="/">
-          <Button bg="white" rounded="100px">
-            <ChakraLink color="clay.500">Comunidade</ChakraLink>
-          </Button>
-        </Link>
-        <Link href="/">
-          <Button bg="white" rounded="100px">
-            <ChakraLink color="clay.500">Guias</ChakraLink>
-          </Button>
-        </Link>
-        <Link href="/">
-          <Button bg="white" rounded="100px">
-            <ChakraLink color="clay.500">Cursos</ChakraLink>
-          </Button>
-        </Link>
-        <Link href="/">
-          <Button bg="white" rounded="100px">
-            <ChakraLink color="clay.500">Sobre</ChakraLink>
-          </Button>
-        </Link>
+        <MenuItem>Comunidade</MenuItem>
+        <MenuItem>Guias</MenuItem>
+        <MenuItem>Cursos</MenuItem>
+        <MenuItem>Sobre</MenuItem>
       </HStack>
       <Flex alignItems="center">
-        <Link href="/">
-          <ChakraLink mr={8}>
-            <DiscordLogo />
-          </ChakraLink>
+        <Link mr={8} href="" title="Discord" isExternal>
+          <DiscordLogo />
         </Link>
-
-        <Link href="/">
-          <ChakraLink>
-            <GithubLogo />
-          </ChakraLink>
+        <Link href="https://github.com/aprendareact" title="GitHub" isExternal>
+          <GithubLogo />
         </Link>
+        {/* <Link
+          mr={8}
+          href="https://twitter.com/aprendareact"
+          title="Twitter"
+          isExternal
+        >
+          <TwitterLogo />
+        </Link> */}
       </Flex>
     </Flex>
   )

@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
+      // TODO: Add helpers/test-utils.js here (I tried and it didnt work, time to sleep 😴)
       "@components/*": ["components/*"],
       "@helpers/*": ["helpers/*"]
     }
@@ -24,7 +25,8 @@
     "**/*.ts",
     "**/*.tsx",
     "jest.config.js",
-    "setupTests.ts"
+    "setupTests.ts",
+    "helpers/test-utils.js"
   ],
   "exclude": ["node_modules"]
 }
