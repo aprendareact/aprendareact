@@ -3,9 +3,12 @@ import { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/core'
 import { theme } from '@chakra-ui/core'
 import { merge } from '@chakra-ui/utils'
-import '../styles/globals.css'
 
 const customTheme = merge(theme, {
+  fonts: {
+    body:
+      'Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"'
+  },
   colors: {
     polar: {
       100: '#FCFEFE',

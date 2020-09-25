@@ -1,0 +1,18 @@
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import GoogleFonts from 'next-google-fonts'
+
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang="pt-br">
+        <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument

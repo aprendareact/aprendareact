@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Flex, Box, Link as ChakraLink, Button, HStack } from '@chakra-ui/core'
+import { Flex, Link as ChakraLink, Button, HStack } from '@chakra-ui/core'
 import Logo, { DiscordLogo, GithubLogo } from './logo'
 
 const Menu = () => {

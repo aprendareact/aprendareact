@@ -11,6 +11,7 @@
     "@chakra-ui/core": "^1.0.0-rc.3",
     "gray-matter": "^4.0.2",
     "next": "9.5.3",
+    "next-google-fonts": "^1.2.1",
     "raw-loader": "^4.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",

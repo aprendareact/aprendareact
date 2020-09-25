@@ -32,9 +32,8 @@ const PostList = ({ posts }: Props) => {
         {posts &&
           posts.map((post, index) => {
             return (
-              <Box gridArea={getGridArea[index]}>
+              <Box key={post.slug} gridArea={getGridArea[index]}>
                 <Article
-                  key={post.slug}
                   smallVariation={index !== 0}
                   description={post.frontmatter.description}
                   date={post.frontmatter.date}
