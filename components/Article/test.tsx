@@ -2,7 +2,7 @@ import { screen, render } from '@testing-library/react'
 
 import Article from '.'
 
-describe('Article', () => {
+describe('<Article />', () => {
   it('shows article information', () => {
     render(
       <Article

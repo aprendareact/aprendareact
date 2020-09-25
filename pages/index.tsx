@@ -13,11 +13,11 @@ const Header = () => (
     pt={20}
     pb={10}
   >
-    <Heading size="2xl" wordBreak="normal" maxWidth="600px">
+    <Heading color="clay.500" size="2xl" wordBreak="normal" maxWidth="600px">
       Aulas online e ao vivo <br />
       para você aprender react
     </Heading>
-    <Text mt={2} fontSize="xl" maxWidth="450px">
+    <Text color="clay.500" mt={2} fontSize="xl" maxWidth="450px">
       A forma mais rápida, prática e segura de dar o próximo passo na sua
       carreira como desenvolvedor.
     </Text>
