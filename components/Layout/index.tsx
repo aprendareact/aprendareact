@@ -41,7 +41,11 @@ const Footer = () => {
       direction="column"
     >
       <Flex justify="space-between" align="center">
-        <Heading>* Leia nosso código de conduta</Heading>
+        <Link href="/Aprenda_React_Codigo_de_Conduta.pdf">
+          <ChakraLink>
+            <Heading>* Leia nosso código de conduta</Heading>
+          </ChakraLink>
+        </Link>
 
         <Link href="/">
           <Button
