@@ -2,7 +2,7 @@ import { Heading, Link as ChakraLink, Text, Flex } from '@chakra-ui/core'
 import Link from 'next/link'
 
 export interface ArticleProps {
-  smallVariation: boolean // bad name
+  smallVariation?: boolean // bad name
   date: string
   title: string
   link: string

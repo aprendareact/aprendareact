@@ -19,6 +19,12 @@
       "@helpers/*": ["helpers/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "jest.config.js",
+    "setupTests.ts"
+  ],
   "exclude": ["node_modules"]
 }
