@@ -8,7 +8,7 @@ import aprendaReactTheme from '../styles/theme'
 
 const customTheme = merge(theme, aprendaReactTheme)
 
-const App: FC<AppProps> = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider resetCSS theme={customTheme}>
       <Component {...pageProps} />
