@@ -22,10 +22,10 @@ const Menu = () => {
     >
       <Logo />
       <HStack spacing="40px" as="nav">
-        <MenuItem>Comunidade</MenuItem>
-        <MenuItem>Guias</MenuItem>
-        <MenuItem>Cursos</MenuItem>
-        <MenuItem>Sobre</MenuItem>
+        <MenuItem href="/">Comunidade</MenuItem>
+        <MenuItem href="/">Guias</MenuItem>
+        <MenuItem href="/">Cursos</MenuItem>
+        <MenuItem href="/">Sobre</MenuItem>
       </HStack>
       <Flex alignItems="center">
         <Link mr={8} href="" title="Discord" isExternal>
