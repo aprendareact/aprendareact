@@ -1,11 +1,4 @@
-import {
-  Grid,
-  Text,
-  Box,
-  Link as ChakraLink,
-  Flex,
-  Heading
-} from '@chakra-ui/core'
+import { Text, Link as ChakraLink, Flex, Heading } from '@chakra-ui/core'
 import Link from 'next/link'
 
 const Action = ({ emoji, title, link = '/', children }) => (

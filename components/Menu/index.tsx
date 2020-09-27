@@ -13,7 +13,7 @@ const MenuItem = ({ href = '/', children }) => (
 const Menu = () => {
   return (
     <Flex
-      pt={10}
+      py={10}
       bg="polar.500"
       as="header"
       justify="space-between"

@@ -6,8 +6,7 @@ const Header = () => (
       width={{ sm: 'auto', lg: '1420px' }}
       minHeight="410px"
       direction="column"
-      pt={20}
-      pb={10}
+      py={10}
     >
       <Heading
         as="h1"
