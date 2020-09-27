@@ -2,6 +2,7 @@ import Layout from '@components/Layout'
 import PostList from '@components/PostList'
 import getPosts from '@helpers/getPosts'
 import Header from '../components/Header'
+import Community from '../components/Community'
 
 const Index = ({ posts, title }) => {
   return (
@@ -9,6 +10,8 @@ const Index = ({ posts, title }) => {
       <Header />
 
       <PostList posts={posts} />
+
+      <Community />
     </Layout>
   )
 }

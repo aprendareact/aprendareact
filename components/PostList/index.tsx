@@ -26,7 +26,7 @@ const PostList = ({ posts }: Props) => {
   }
 
   return (
-    <Flex mt={20} justifyContent="center">
+    <Flex mt={'150px'} justifyContent="center">
       <Flex width={{ sm: 'auto', lg: '1420px' }} direction="column" as="main">
         <Heading mb={10}>Nosso blog</Heading>
         <Grid gap={4} templateColumns="repeat(4, 1fr)">
