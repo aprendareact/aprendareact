@@ -26,24 +26,26 @@ const PostList = ({ posts }: Props) => {
   }
 
   return (
-    <Flex mt={20} px="22rem" direction="column" as="main">
-      <Heading mb={10}>Nosso blog</Heading>
-      <Grid gap={4} templateColumns="repeat(4, 1fr)">
-        {posts &&
-          posts.map((post, index) => {
-            return (
-              <Box key={post.slug} gridArea={getGridArea[index]}>
-                <Article
-                  smallVariation={index !== 0}
-                  description={post.frontmatter.description}
-                  date={post.frontmatter.date}
-                  title={post.frontmatter.title}
-                  link={`/post/${post.slug}`}
-                />
-              </Box>
-            )
-          })}
-      </Grid>
+    <Flex mt={20} justifyContent="center">
+      <Flex width={{ sm: 'auto', lg: '1420px' }} direction="column" as="main">
+        <Heading mb={10}>Nosso blog</Heading>
+        <Grid gap={4} templateColumns="repeat(4, 1fr)">
+          {posts &&
+            posts.map((post, index) => {
+              return (
+                <Box key={post.slug} gridArea={getGridArea[index]}>
+                  <Article
+                    smallVariation={index !== 0}
+                    description={post.frontmatter.description}
+                    date={post.frontmatter.date}
+                    title={post.frontmatter.title}
+                    link={`/post/${post.slug}`}
+                  />
+                </Box>
+              )
+            })}
+        </Grid>
+      </Flex>
     </Flex>
   )
 }
