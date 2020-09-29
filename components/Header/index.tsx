@@ -3,7 +3,8 @@ import { Button, Flex, Text, Heading } from '@chakra-ui/core'
 const Header = () => (
   <Flex bg="polar.500" justifyContent="center">
     <Flex
-      width={{ base: 'auto', xl: '1024px' }}
+      px={10}
+      width={['full', 'full', 2 / 3]}
       minHeight="410px"
       direction="column"
       py={10}

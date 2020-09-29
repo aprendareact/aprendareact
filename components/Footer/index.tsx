@@ -24,12 +24,17 @@ const Footer = () => {
   return (
     <Flex bg="polar.500" mt={150} justifyContent="center">
       <Flex
-        width={{ sm: 'auto', lg: '1420px' }}
+        px={10}
+        width={['full', 'full', 2 / 3]}
         py={20}
         as="footer"
         direction="column"
       >
-        <Flex justify="space-between" align="center">
+        <Flex
+          justify="space-between"
+          align="center"
+          direction={{ base: 'column', md: 'row' }}
+        >
           <Link passHref href="/Aprenda_React_Codigo_de_Conduta.pdf">
             <ChakraLink>
               <Heading>* Leia nosso código de conduta</Heading>
@@ -38,6 +43,7 @@ const Footer = () => {
 
           <Link href="/">
             <Button
+              mt={{ sm: 10 }}
               letterSpacing="tight"
               bg="white"
               border="1px"
@@ -52,9 +58,13 @@ const Footer = () => {
 
         <Divider my={16} />
 
-        <Flex justify="space-between" align="center">
+        <Flex
+          justify="space-between"
+          align="center"
+          direction={{ base: 'column', md: 'row' }}
+        >
           <Logo />
-          <HStack spacing={10}>
+          <HStack mt={{ sm: 10 }} spacing={10}>
             <FooterItem>Cursos</FooterItem>
             <FooterItem>Comunidade</FooterItem>
             <FooterItem>Sobre</FooterItem>
@@ -84,9 +94,13 @@ const Footer = () => {
           </Flex>
         </Flex>
 
-        <Flex justify="space-between" align="center">
+        <Flex
+          justify="space-between"
+          align="center"
+          direction={{ base: 'column', md: 'row' }}
+        >
           <Text>©2020 Aprenda React. 🇧🇷 Todos os direitos reservados.</Text>
-          <HStack spacing={10}>
+          <HStack mt={{ sm: 10 }} spacing={10}>
             <FooterItem>Github</FooterItem>
             <FooterItem>Twitter</FooterItem>
             <FooterItem>Discord</FooterItem>

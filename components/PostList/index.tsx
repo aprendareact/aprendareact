@@ -27,13 +27,27 @@ const PostList = ({ posts }: Props) => {
 
   return (
     <Flex mt={150} justifyContent="center">
-      <Flex width={{ base: 'auto', lg: '1420px' }} direction="column" as="main">
+      <Flex
+        px={10}
+        width={['full', 'full', 2 / 3]}
+        direction="column"
+        as="main"
+      >
         <Heading mb={6}>Nosso blog</Heading>
-        <Grid minHeight="450px" gap={4} templateColumns="repeat(4, 1fr)">
+        <Grid
+          minHeight="450px"
+          gap={4}
+          templateColumns={{ sm: '1fr', md: '1fr', lg: 'repeat(4, 1fr)' }}
+        >
           {posts &&
             posts.map((post, index) => {
               return (
-                <Box key={post.slug} gridArea={getGridArea[index]}>
+                <Box
+                  key={post.slug}
+                  gridArea={{
+                    lg: `${getGridArea[index]}`
+                  }}
+                >
                   <Article
                     variant={index === 0 ? 'featured' : 'default'}
                     description={post.frontmatter.description}

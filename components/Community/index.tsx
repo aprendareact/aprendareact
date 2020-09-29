@@ -26,8 +26,16 @@ const Action = ({ emoji, title, link = '/', children }) => (
 const Community = () => {
   return (
     <Flex mt={150} justifyContent="center">
-      <Flex width={{ sm: 'auto', lg: '1420px' }} direction="column" as="main">
-        <Flex justifyContent="space-between">
+      <Flex
+        px={10}
+        width={['full', 'full', 2 / 3]}
+        direction="column"
+        as="main"
+      >
+        <Flex
+          justifyContent="space-between"
+          direction={{ base: 'column', md: 'row' }}
+        >
           <Flex justify="center" direction="column">
             <Text color="clay.300" textTransform="uppercase">
               Junte-se á nós
@@ -48,6 +56,7 @@ const Community = () => {
             border="1px solid"
             borderColor="gray.200"
             borderRadius={8}
+            mt={{ sm: 10 }}
           >
             <Action emoji="✊🏿" title="Participar de um evento">
               Os testes automatizados não são diferentes de qualquer.

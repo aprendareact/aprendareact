@@ -33,7 +33,7 @@ const Article = ({
   description,
   link,
   linkText = 'Leia mais',
-  linkTitle = linkText
+  linkTitle = `Vá para a página deste artigo e leia mais sobre ${title}`
 }: ArticleProps) => {
   return (
     <Flex
@@ -47,6 +47,7 @@ const Article = ({
       rounded="lg"
       border="1px"
       borderColor="gray.200"
+      minHeight={150}
     >
       <Flex direction="column">
         <header>
@@ -69,7 +70,7 @@ const Article = ({
         </header>
 
         {variant === 'featured' ? (
-          <Text lineHeight="tall" maxWidth="450px" mt={4}>
+          <Text lineHeight="tall" maxWidth="450px" my={4}>
             {description}
           </Text>
         ) : null}
