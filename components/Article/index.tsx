@@ -27,14 +27,14 @@ const styles = {
   }
 }
 
-const Article: React.FC<ArticleProps> = ({
+const Article = ({
   variant = 'default',
   date,
   title,
   description,
   link,
   linkText = 'Leia mais'
-}) => {
+}: ArticleProps) => {
   return (
     <Flex
       bg="white"
