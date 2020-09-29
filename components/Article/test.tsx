@@ -20,6 +20,7 @@ describe('<Article />', () => {
   it('shows article description', () => {
     render(
       <Article
+        variant="featured"
         date="23 de Julho de 2020"
         title="Como escrever um teste"
         description="Esse é o texto de preview"

@@ -2,7 +2,7 @@ import { Heading, Link as ChakraLink, Text, Flex } from '@chakra-ui/core'
 import Link from 'next/link'
 
 export interface ArticleProps {
-  smallVariation?: boolean // bad name
+  variant?: 'featured' | 'default'
   date: string
   title: string
   link: string
@@ -10,60 +10,83 @@ export interface ArticleProps {
   description?: string
 }
 
+const styles = {
+  default: {
+    articleHeight: '147px',
+    articlePadding: 5,
+    headingMarginTop: 2,
+    headingMaxWidth: '280px',
+    headingSize: 'sm'
+  },
+  featured: {
+    articleHeight: '310px',
+    articlePadding: 8,
+    headingMarginTop: 0,
+    headingMaxWidth: '500px',
+    headingSize: 'lg'
+  }
+}
+
 const Article: React.FC<ArticleProps> = ({
-  smallVariation, // bad name
+  variant = 'default',
   date,
   title,
   description,
   link,
   linkText = 'Leia mais'
-}) => (
-  <Flex
-    as="article"
-    direction="column"
-    justifyContent="space-between"
-    h={smallVariation ? '147px' : '310px'} // its hard to set the height using the gap prop on the initial Grid :/
-    bg="white"
-    p={smallVariation ? 5 : 8}
-    pb={4}
-    rounded="lg"
-    border="1px"
-    borderColor="gray.300"
-  >
-    <Flex direction="column">
-      <header>
-        <Text
-          as="time"
-          color="gray.700"
-          fontSize="xs"
+}) => {
+  return (
+    <Flex
+      bg="white"
+      as="article"
+      direction="column"
+      justifyContent="space-between"
+      h={styles[variant].articleHeight}
+      p={styles[variant].articlePadding}
+      pb={4}
+      rounded="lg"
+      border="1px"
+      borderColor="gray.300"
+    >
+      <Flex direction="column">
+        <header>
+          <Text
+            as="time"
+            color="gray.700"
+            fontSize="xs"
+            textTransform="uppercase"
+            dateTime={date}
+          >
+            {date}
+          </Text>
+          <Heading
+            mt={styles[variant].headingMarginTop}
+            maxWidth={styles[variant].headingMaxWidth}
+            size={styles[variant].headingSize}
+          >
+            {title}
+          </Heading>
+        </header>
+
+        {variant === 'featured' ? (
+          <Text maxWidth="450px" mt={4}>
+            {description}
+          </Text>
+        ) : null}
+      </Flex>
+
+      <Link href={link}>
+        <ChakraLink
           textTransform="uppercase"
-          dateTime={date}
+          fontSize="sm"
+          textColor="gray.800"
+          color="clay.500"
         >
-          {date}
-        </Text>
-        <Heading
-          mt={smallVariation ? 2 : 0}
-          maxWidth={smallVariation ? '280px' : '500px'}
-          size={smallVariation ? 'sm' : 'lg'}
-        >
-          {title}
-        </Heading>
-      </header>
-
-      {!smallVariation ? <Text mt={4}>{description}</Text> : null}
+          {linkText} →
+        </ChakraLink>
+      </Link>
     </Flex>
-
-    <Link href={link}>
-      <ChakraLink
-        textTransform="uppercase"
-        fontSize="sm"
-        textColor="gray.800"
-        color="clay.500"
-      >
-        {linkText} →
-      </ChakraLink>
-    </Link>
-  </Flex>
-)
+  )
+}
 
 export default Article

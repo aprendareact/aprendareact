@@ -35,7 +35,7 @@ const PostList = ({ posts }: Props) => {
               return (
                 <Box key={post.slug} gridArea={getGridArea[index]}>
                   <Article
-                    smallVariation={index !== 0}
+                    variant={index === 0 ? 'featured' : 'default'}
                     description={post.frontmatter.description}
                     date={post.frontmatter.date}
                     title={post.frontmatter.title}
