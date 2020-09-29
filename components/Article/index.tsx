@@ -12,18 +12,18 @@ export interface ArticleProps {
 
 const styles = {
   default: {
-    articleHeight: '147px',
+    articleHeight: '217px',
     articlePadding: 5,
     headingMarginTop: 2,
     headingMaxWidth: '280px',
     headingSize: 'sm'
   },
   featured: {
-    articleHeight: '310px',
+    articleHeight: '450px',
     articlePadding: 8,
-    headingMarginTop: 0,
+    headingMarginTop: 2,
     headingMaxWidth: '500px',
-    headingSize: 'lg'
+    headingSize: 'xl'
   }
 }
 
@@ -46,7 +46,7 @@ const Article = ({
       pb={4}
       rounded="lg"
       border="1px"
-      borderColor="gray.300"
+      borderColor="gray.200"
     >
       <Flex direction="column">
         <header>
@@ -69,7 +69,7 @@ const Article = ({
         </header>
 
         {variant === 'featured' ? (
-          <Text maxWidth="450px" mt={4}>
+          <Text lineHeight="tall" maxWidth="450px" mt={4}>
             {description}
           </Text>
         ) : null}

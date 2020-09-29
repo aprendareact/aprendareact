@@ -47,7 +47,6 @@ export default function BlogPost({ frontmatter, markdownBody }) {
               letterSpacing="tight"
               bg="white"
               border="1px"
-              borderColor="clay.400"
               rounded="100px"
               fontSize="sm"
               onClick={() =>

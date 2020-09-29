@@ -41,7 +41,7 @@ const Footer = () => {
               letterSpacing="tight"
               bg="white"
               border="1px"
-              borderColor="clay.400"
+              borderColor="clay.300"
               rounded="100px"
               fontSize="sm"
             >

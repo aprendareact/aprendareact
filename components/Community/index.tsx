@@ -32,11 +32,11 @@ const Community = () => {
             <Text color="clay.300" textTransform="uppercase">
               Junte-se á nós
             </Text>
-            <Heading maxWidth="450px">
+            <Heading size="xl" maxWidth="450px">
               Nossa comunidade e amiga do trabalho remoto, criativa, gentil e
               adora compartilhar.
             </Heading>
-            <Text mt={2} color="clay.500" maxWidth="450px">
+            <Text lineHeight="tall" mt={2} color="clay.500" maxWidth="450px">
               Junior ou senior, tímido ou extrovertido, lider dedesenvolvedor ou
               designer - temos várias iniciativas incluindo para interagir com
               indivíduos e equipes com ideias.
