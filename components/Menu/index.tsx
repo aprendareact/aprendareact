@@ -4,7 +4,7 @@ import Logo, { DiscordLogo, GithubLogo } from './logo'
 
 const MenuItem = ({ href = '/', children }) => (
   <NextLink href={href}>
-    <Button bg="white" rounded="100px">
+    <Button bg="white" rounded="full">
       <Link color="clay.500">{children}</Link>
     </Button>
   </NextLink>

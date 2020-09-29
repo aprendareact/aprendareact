@@ -25,7 +25,7 @@ const Action = ({ emoji, title, link = '/', children }) => (
 
 const Community = () => {
   return (
-    <Flex mt={'150px'} justifyContent="center">
+    <Flex mt={150} justifyContent="center">
       <Flex width={{ sm: 'auto', lg: '1420px' }} direction="column" as="main">
         <Flex justifyContent="space-between">
           <Flex justify="center" direction="column">

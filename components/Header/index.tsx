@@ -3,7 +3,7 @@ import { Button, Flex, Text, Heading } from '@chakra-ui/core'
 const Header = () => (
   <Flex bg="polar.500" justifyContent="center">
     <Flex
-      width={{ sm: 'auto', lg: '1420px' }}
+      width={{ base: 'auto', xl: '1024px' }}
       minHeight="410px"
       direction="column"
       py={10}
@@ -24,13 +24,7 @@ const Header = () => (
       </Text>
 
       <div>
-        <Button
-          mt={4}
-          fontSize="sm"
-          bg="white"
-          color="clay.500"
-          rounded="100px"
-        >
+        <Button mt={4} fontSize="sm" bg="white" color="clay.500" rounded="full">
           COMEÇAR A APRENDER
         </Button>
         <Button
@@ -39,7 +33,7 @@ const Header = () => (
           fontSize="sm"
           bg="polar.400"
           color="clay.500"
-          rounded="100px"
+          rounded="full"
         >
           FAÇA PARTE
         </Button>

@@ -22,7 +22,7 @@ const FooterItem = ({ href = '/', children }) => (
 
 const Footer = () => {
   return (
-    <Flex bg="polar.500" mt={'150px'} justifyContent="center">
+    <Flex bg="polar.500" mt={150} justifyContent="center">
       <Flex
         width={{ sm: 'auto', lg: '1420px' }}
         py={20}
@@ -42,7 +42,7 @@ const Footer = () => {
               bg="white"
               border="1px"
               borderColor="clay.300"
-              rounded="100px"
+              rounded="full"
               fontSize="sm"
             >
               COMEÇAR A APRENDER

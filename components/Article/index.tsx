@@ -7,19 +7,18 @@ export interface ArticleProps {
   title: string
   link: string
   linkText?: string
+  linkTitle?: string
   description?: string
 }
 
 const styles = {
   default: {
-    articleHeight: '217px',
     articlePadding: 5,
     headingMarginTop: 2,
     headingMaxWidth: '280px',
     headingSize: 'sm'
   },
   featured: {
-    articleHeight: '450px',
     articlePadding: 8,
     headingMarginTop: 2,
     headingMaxWidth: '500px',
@@ -33,15 +32,16 @@ const Article = ({
   title,
   description,
   link,
-  linkText = 'Leia mais'
+  linkText = 'Leia mais',
+  linkTitle = linkText
 }: ArticleProps) => {
   return (
     <Flex
+      height="full"
       bg="white"
       as="article"
       direction="column"
       justifyContent="space-between"
-      h={styles[variant].articleHeight}
       p={styles[variant].articlePadding}
       pb={4}
       rounded="lg"
@@ -77,6 +77,7 @@ const Article = ({
 
       <Link href={link}>
         <ChakraLink
+          title={linkTitle}
           textTransform="uppercase"
           fontSize="sm"
           textColor="gray.800"

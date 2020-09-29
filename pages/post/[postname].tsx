@@ -47,7 +47,7 @@ export default function BlogPost({ frontmatter, markdownBody }) {
               letterSpacing="tight"
               bg="white"
               border="1px"
-              rounded="100px"
+              rounded="full"
               fontSize="sm"
               onClick={() =>
                 alert('Envie um PR para adicionar esta funcionalidade :)')
