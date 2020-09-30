@@ -51,14 +51,6 @@ const Menu = () => {
           >
             <GithubLogo />
           </Link>
-          {/* <Link
-            mr={8}
-            href="https://twitter.com/aprendareact"
-            title="Twitter"
-            isExternal
-          >
-            <TwitterLogo />
-          </Link> */}
         </Flex>
       </Flex>
     </>

@@ -4,12 +4,13 @@ import {
   Flex,
   Link as ChakraLink,
   Button,
-  HStack,
+  Stack,
   Text,
   Input,
   InputGroup,
   InputRightElement
 } from '@chakra-ui/core'
+import { useBreakpointValue } from '@chakra-ui/media-query'
 import Link from 'next/link'
 
 import Logo from '../Menu/logo'
@@ -21,6 +22,11 @@ const FooterItem = ({ href = '/', children }) => (
 )
 
 const Footer = () => {
+  const variant = useBreakpointValue({
+    base: 'Cadastrar',
+    md: 'Comece a aprender'
+  })
+
   return (
     <Flex bg="polar.500" mt={150} justifyContent="center">
       <Flex
@@ -43,7 +49,7 @@ const Footer = () => {
 
           <Link href="/">
             <Button
-              mt={{ sm: 10 }}
+              mt={{ base: 10 }}
               letterSpacing="tight"
               bg="white"
               border="1px"
@@ -64,30 +70,37 @@ const Footer = () => {
           direction={{ base: 'column', md: 'row' }}
         >
           <Logo />
-          <HStack mt={{ sm: 10 }} spacing={10}>
+          <Stack
+            direction={['column', 'row']}
+            mt={{ base: 10 }}
+            spacing={{ base: 2, md: 10 }}
+          >
             <FooterItem>Cursos</FooterItem>
             <FooterItem>Comunidade</FooterItem>
             <FooterItem>Sobre</FooterItem>
             <FooterItem>Blog</FooterItem>
             <FooterItem>Contato</FooterItem>
-          </HStack>
+          </Stack>
         </Flex>
 
         <Flex my={20} direction="column">
           <Text fontSize="lg">Inscreva-se na Newsletter</Text>
           <Flex mt={2} align="center" width="max-content">
             <InputGroup size="lg">
-              <Input pr="200px" placeholder="Seu email" />
-              <InputRightElement width="190px">
+              <Input
+                pr={{ base: '100px', md: '200px' }}
+                placeholder="Seu email"
+              />
+              <InputRightElement justifyContent="flex-end" width="190px">
                 <Button
                   onClick={() => alert('Isso ainda não faz nada 🙏')}
                   bgColor="clay.500"
-                  width="180px"
+                  width={['90px', '180px']}
                   color="white"
                   height="36px"
                   size="sm"
                 >
-                  Comece a aprender
+                  <Text>{variant}</Text>
                 </Button>
               </InputRightElement>
             </InputGroup>
@@ -97,16 +110,18 @@ const Footer = () => {
         <Flex
           justify="space-between"
           align="center"
-          direction={{ base: 'column', md: 'row' }}
+          direction={{ base: 'column-reverse', md: 'row' }}
         >
-          <Text>©2020 Aprenda React. 🇧🇷 Todos os direitos reservados.</Text>
-          <HStack mt={{ sm: 10 }} spacing={10}>
+          <Text my={{ base: 10 }} textAlign={{ base: 'center' }}>
+            ©2020 Aprenda React. 🇧🇷 Todos os direitos reservados.
+          </Text>
+          <Stack direction={['column', 'row']} spacing={{ base: 2, md: 10 }}>
             <FooterItem>Github</FooterItem>
             <FooterItem>Twitter</FooterItem>
             <FooterItem>Discord</FooterItem>
             <FooterItem>Privacidade</FooterItem>
             <FooterItem>Termos</FooterItem>
-          </HStack>
+          </Stack>
         </Flex>
       </Flex>
     </Flex>

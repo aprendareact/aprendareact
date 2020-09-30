@@ -56,7 +56,7 @@ const Community = () => {
             border="1px solid"
             borderColor="gray.200"
             borderRadius={8}
-            mt={{ sm: 10 }}
+            mt={{ base: 10 }}
           >
             <Action emoji="✊🏿" title="Participar de um evento">
               Os testes automatizados não são diferentes de qualquer.

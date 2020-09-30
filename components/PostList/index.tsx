@@ -37,7 +37,7 @@ const PostList = ({ posts }: Props) => {
         <Grid
           minHeight="450px"
           gap={4}
-          templateColumns={{ sm: '1fr', md: '1fr', lg: 'repeat(4, 1fr)' }}
+          templateColumns={{ base: '1fr', md: '1fr', lg: 'repeat(4, 1fr)' }}
         >
           {posts &&
             posts.map((post, index) => {
