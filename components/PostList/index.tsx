@@ -8,7 +8,7 @@ interface Props {
       frontmatter: {
         date: string
         title: string
-        description: string
+        summary: string
       }
     }
   ]
@@ -50,10 +50,10 @@ const PostList = ({ posts }: Props) => {
                 >
                   <Article
                     variant={index === 0 ? 'featured' : 'default'}
-                    description={post.frontmatter.description}
+                    summary={post.frontmatter.summary}
                     date={post.frontmatter.date}
                     title={post.frontmatter.title}
-                    link={`/post/${post.slug}`}
+                    link={`/artigos/${post.slug}`}
                   />
                 </Box>
               )

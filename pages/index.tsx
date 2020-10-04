@@ -1,15 +1,20 @@
+import matter from 'gray-matter'
+import fs from 'fs'
+import path from 'path'
+
 import Layout from '@components/Layout'
 import PostList from '@components/PostList'
-import getPosts from '@helpers/getPosts'
 import Header from '../components/Header'
 import Community from '../components/Community'
 
-const Index = ({ posts, title }) => {
+const root = process.cwd()
+
+const Index = ({ articles }) => {
   return (
-    <Layout pageTitle={title}>
+    <Layout pageTitle={'Aprenda React'}>
       <Header />
 
-      <PostList posts={posts} />
+      <PostList posts={articles} />
 
       <Community />
     </Layout>
@@ -19,15 +24,14 @@ const Index = ({ posts, title }) => {
 export default Index
 
 export async function getStaticProps() {
-  const posts = ((context) => getPosts(context))(
-    require.context('../posts', true, /\.md$/)
-  )
-
-  return {
-    props: {
-      posts,
-      title: 'Aprenda React',
-      description: 'This is a simple blog built with Next'
+  const contentRoot = path.join(root, 'artigos')
+  const articles = fs.readdirSync(contentRoot).map((p) => {
+    const content = fs.readFileSync(path.join(contentRoot, p), 'utf8')
+    return {
+      slug: p.replace(/\.mdx/, ''),
+      content,
+      frontmatter: matter(content).data
     }
-  }
+  })
+  return { props: { articles } }
 }
