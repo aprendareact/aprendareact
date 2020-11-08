@@ -12,6 +12,7 @@ import {
   Button
 } from '@chakra-ui/core'
 import Layout from '@components/Layout'
+import BlogSeo from '@components/BlogSeo'
 
 const editUrl = (slug: string) =>
   `https://github.com/aprendareact/aprendareact.com.br/edit/main/artigos/${slug}.mdx`
@@ -26,6 +27,7 @@ export default function BlogLayout({ children, frontMatter }) {
 
   return (
     <Layout pageTitle={`${frontMatter.title}`}>
+      <BlogSeo slug={slug} {...frontMatter} />
       <Stack
         as="article"
         spacing={8}
