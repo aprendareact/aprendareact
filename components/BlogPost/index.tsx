@@ -14,7 +14,7 @@ import {
 import Layout from '@components/Layout'
 
 const editUrl = (slug: string) =>
-  `https://github.com/aprendareact/aprendareact.com.br/edit/main/pages/artigos/${slug}.mdx`
+  `https://github.com/aprendareact/aprendareact.com.br/edit/main/artigos/${slug}.mdx`
 const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `https://aprendareact.com.br/artigos/${slug}`
