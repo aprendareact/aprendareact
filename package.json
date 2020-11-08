@@ -12,7 +12,7 @@
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.1",
-    "next": "9.5.3",
+    "next": "9.5.4",
     "next-google-fonts": "^1.2.1",
     "next-mdx-remote": "^1.0.0",
     "react": "16.13.1",
