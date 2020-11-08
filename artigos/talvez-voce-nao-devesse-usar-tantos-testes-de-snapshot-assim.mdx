@@ -1,0 +1,47 @@
+---
+title: 'Talvez você não devesse usar tantos testes de snapshot assim'
+summary: 'Neste artigo vou expor alguns pontos fracos da criação de testes baseados em snapshots.'
+image: ''
+author: 'Stéphano Wallace'
+authorProfile: 'https://www.linkedin.com/in/st%C3%A9phano-wallace-saraiva-e-silva-662800a4/'
+authorImage: ''
+publishedAt: '2019-07-01'
+---
+
+Neste artigo vou expor alguns pontos fracos da criação de testes baseados em snapshots. Tenha em mente que escrevi este texto para que você entenda melhor os riscos de usá-los, não estou aqui para convencê-lo a **nunca mais testar com snapshots**, mas creio que todo bom desenvolvedor deve saber o melhor momento para utilizar cada ferramenta que possui à sua disposição.
+
+> Por mais simplórios que os exemplos sejam, acho bom mencionar que eles foram criados utilizando as bibliotecas Jest e react-testing-library.
+
+## Dificuldade em transmitir idéia
+
+O uso de snapshots contribui de forma negativa na hora do desenvolvedor expressar sua intenção ao criar um teste. Um dos testes que você (provavelmente) já viu/fez muito é o seguinte:
+
+![](https://cdn-images-1.medium.com/max/2000/1*XH4uU0WNJP1U98vkC5ySKw.png)
+
+Bons testes deveriam servir como uma documentação para seu componente, muitos desenvolvedores recorrem aos testes antes mesmo de ver o código do próprio componente para entender seu funcionamento… e nesse caso a situação fica um pouco complicada, mesmo sendo um componente simples, esse teste nos força a ter que ver o código para entender o que ele "deveria renderizar". Claro que esse tipo de situação melhoraria ao utilizar uma descrição do teste que realmente mostre a intenção do mesmo, mas quando estamos lidando com componentes mais complexos, isso ainda pode ser um problema. Falando em componentes complexos…
+
+## Lidando com componentes complexos
+
+![](https://cdn-images-1.medium.com/max/2452/1*kPJ1MU1cqEdmyEqdfEP9jA.png)
+
+Vamos supor que nosso "ExtremelyComplexComponent" seja composto por diversos outros componentes e que apresente lógicas onde sua renderização mude de acordo com as propriedades passadas e/ou talvez seu próprio estado. Nosso teste simplesmente não sugere nada sobre esse comportamento e o que devemos esperar, isso acaba nos obrigando a ter que vasculhar o código do componente para entender o que deveria ser renderizado nessa situação.
+
+## Forte ligação com o componente a ser testado
+
+Como o nome sugere, testes com snapshot gerarão uma "foto" do nosso componente em determinado momento do seu ciclo de vida. Até aí tudo bem, mas TODA alteração subsequente feita no código do componente, por mais que não afete sua lógica/regra de negócio, fará com que o snapshot seja incompatível com a versão atual, gerando um erro. Esses falsos negativos acabam fazendo com que o desenvolvedor crie o costume de sempre atualizar o snapshot para "corrigir" o erro, muitas vezes sem prestar atenção nessa alteração, o que nos leva para o próximo tópico!
+
+## Atualização inconsciente
+
+<img src="https://media3.giphy.com/media/XGqDsE3owV0RO/giphy.webp?cid=dda24d500e94cced39eab07bdbc4abec7e422dea7e0d7d52&rid=giphy.webp" />
+
+Atualizar snapshots de forma inconsciente acaba sendo uma má prática pois às vezes acabamos atualizando um snapshot que está realmente errado sem perceber. Isso acaba virando uma bola de neve, pois o próximo desenvolvedor a trabalhar no código, tomará aquele snapshot errado como certo. Talvez muito tempo de desenvolvimento seja perdido até que o time encontre a razão daquele componente não estar funcionando, apesar dos testes estarem todos "passando".
+
+## Fim do TDD
+
+Se você considera TDD uma boa prática de desenvolvimento, ficará (ou ficou) triste ao saber que TDD e testes com snapshot caminham em direções opostas, uma vez que os testes com snapshots analisam o estado do código em determinado momento do ciclo de vida.
+
+Você precisa de um componente primeiro para poder ter seu snapshot gerado.
+
+Desenvolvedores podem se sentir tentados a usar testes de snapshot devido à sua facilidade de implementação, mas estes podem acabar se tornando um problema em projetos que envolvam muitos desenvolvedores ou que possuem um ciclo de vida extenso (quantas vezes você já criou um componente e depois de alguns meses não se lembrava como ele funcionava?).
+
+Espero que este texto tenha te ajudado a entender um pouco mais sobre os eventuais riscos de se implementar testes com snapshot e te faça refletir um pouco antes de implementá-los em seu próximo projeto.

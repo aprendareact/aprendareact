@@ -8,7 +8,7 @@ export interface ArticleProps {
   link: string
   linkText?: string
   linkTitle?: string
-  description?: string
+  summary?: string
 }
 
 const styles = {
@@ -30,7 +30,7 @@ const Article = ({
   variant = 'default',
   date,
   title,
-  description,
+  summary,
   link,
   linkText = 'Leia mais',
   linkTitle = `Vá para a página deste artigo e leia mais sobre ${title}`
@@ -71,12 +71,12 @@ const Article = ({
 
         {variant === 'featured' ? (
           <Text lineHeight="tall" maxWidth="450px" my={4}>
-            {description}
+            {summary}
           </Text>
         ) : null}
       </Flex>
 
-      <Link href={link}>
+      <Link passHref href={link}>
         <ChakraLink
           title={linkTitle}
           textTransform="uppercase"
